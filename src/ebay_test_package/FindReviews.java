@@ -30,7 +30,7 @@ public class FindReviews {
 		 * 
 		 * @return The Firefox WebDriver
 		 */
-		System.setProperty("webdriver.gecko.driver", "D:\\Downloads\\geckodriver-v0.30.0-win64\\geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
 		System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,"true"); 
 		System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE,"/dev/null");
 		WebDriver driver = new FirefoxDriver();

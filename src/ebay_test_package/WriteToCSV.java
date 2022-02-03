@@ -16,14 +16,12 @@ public class WriteToCSV {
 	
 	public void givenDataArray_whenConvertToCSV_thenOutputCreated(List<String[]> dataLines, String name, String typeOfFeedback) throws IOException {
 		String fileName = name + "_" + typeOfFeedback;
-		String directoryName = "D:\\matthews_desktop\\files\\Java_stuff\\selenium\\" + name;
+		String directoryName = System.getProperty("user.dir") + "\\reviews\\" + name;
 	    File directory = new File(directoryName);
 	    if (! directory.exists()){
-	        directory.mkdir();
-	        // If you require it to make the entire directory path including parents,
-	        // use directory.mkdirs(); here instead.
+	        directory.mkdirs();
 	    }
-	    File csvOutputFile = new File("D:\\matthews_desktop\\files\\Java_stuff\\selenium\\" + name + "\\" + fileName + "Reviews.csv");
+	    File csvOutputFile = new File(System.getProperty("user.dir") + "\\reviews\\" + name + "\\" + fileName + "Reviews.csv");
 	    try (PrintWriter pw = new PrintWriter(csvOutputFile)) {
 	        dataLines.stream()
 	          .map(this::convertToCSV)
